@@ -23,13 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
     // querySelectorAll 
-    const allPixels = document.querySelectorAll('.pixel');
+    const allPixels = Array.from(document.querySelectorAll('.pixel'));
     // console.log(allPixels);
-    // convert the array to a node list
-    const pixelArray = Array.from(allPixels);
+    // loop through the pixels and add the event listener
 
     // console.log(pixelArray.length);
-    pixelArray.forEach(pixel => {
+    allPixels.forEach(pixel => {
         pixel.addEventListener("mouseenter", () => {
             pixel.classList.add("colored-in");
         } );
